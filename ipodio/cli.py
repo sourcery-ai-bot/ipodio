@@ -30,7 +30,7 @@ from . import __version__
 
 class Options(object):
     def __init__(self, options, defaults=None):
-        self.defaults = defaults if defaults else {}
+        self.defaults = defaults or {}
         self.options = self._parse_options(options)
         self.arguments = self._parse_arguments(options)
         self.commands = self._parse_commands(options)

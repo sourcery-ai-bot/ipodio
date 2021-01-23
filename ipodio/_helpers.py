@@ -8,7 +8,7 @@ def clean_filename(filename):
         '}', '&', '"', "'", '*', '\\', '<', '>',
     ]
 
-    table = dict((ord(c), u'') for c in not_allowed_chars)
-    table.update(dict((ord(c), u'_') for c in space_chars))
+    table = {ord(c): u'' for c in not_allowed_chars}
+    table.update({ord(c): u'_' for c in space_chars})
 
     return filename.translate(table)
